@@ -1678,16 +1678,17 @@ html {
 
 @media (max-width: 520px) {
   .about-hero {
-    min-height: 82vh;
+    min-height: 82vh !important;
     background-image:
       linear-gradient(
         90deg,
-        rgba(248, 245, 239, 0.96) 0%,
-        rgba(248, 245, 239, 0.86) 62%,
-        rgba(248, 245, 239, 0.45) 100%
+        rgba(248, 245, 239, 0.72) 0%,
+        rgba(248, 245, 239, 0.52) 48%,
+        rgba(248, 245, 239, 0.12) 100%
       ),
       url("../img/nosotros-hero.png") !important;
-    background-size: cover;
-    background-position: center right;
+    background-size: cover !important;
+    background-position: 75% center !important;
+    background-repeat: no-repeat !important;
   }
 }
