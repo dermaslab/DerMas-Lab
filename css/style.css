@@ -19,9 +19,6 @@ body {
   background-color: var(--white);
 }
 
-html {
-  touch-action: manipulation;
-}
 
 a {
   text-decoration: none;
@@ -1459,13 +1456,22 @@ a {
 
 
 
-/* MODIFICACIONES MOVILES */
+/* =========================================
+   MODIFICACIONES MOBILE PREMIUM
+========================================= */
+
+html {
+  touch-action: manipulation;
+}
+
+/* BOTON HAMBURGUESA */
+
 .menu-toggle {
   display: none;
   width: 48px;
   height: 48px;
   border: 1px solid rgba(30, 30, 30, 0.08);
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   border-radius: 50%;
   cursor: pointer;
   align-items: center;
@@ -1475,6 +1481,11 @@ a {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
   z-index: 300;
+  touch-action: manipulation;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.03);
 }
 
 .menu-toggle span {
@@ -1497,14 +1508,33 @@ a {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* =========================================
+   TABLET + MOBILE
+========================================= */
+
 @media (max-width: 900px) {
+
+  /* HEADER */
+
+  .header {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
   .navbar {
+    width: 92%;
     min-height: 78px;
   }
 
+  .logo img {
+    width: 125px;
+  }
+
   .menu-toggle {
-  touch-action: manipulation;
-}
+    display: flex;
+  }
+
+  /* MENU */
 
   .nav-menu {
     position: fixed;
@@ -1513,14 +1543,21 @@ a {
     width: min(82%, 360px);
     height: 100vh;
     background: rgba(255, 255, 255, 0.96);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
     padding: 120px 34px 34px;
+
     flex-direction: column;
     align-items: flex-start;
+
     gap: 0;
+
     box-shadow: -18px 0 45px rgba(0, 0, 0, 0.12);
+
     transition: right 0.35s ease;
+
     z-index: 250;
   }
 
@@ -1537,11 +1574,214 @@ a {
     display: block;
     width: 100%;
     padding: 20px 0;
+
     font-size: 17px;
     font-weight: 500;
+
+    transition: 0.25s ease;
   }
 
+  .nav-menu a:hover,
   .nav-menu a.active {
     color: #7d8f76;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 82vh;
+
+    padding: 105px 6% 65px;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(248, 245, 239, 0.96) 0%,
+        rgba(248, 245, 239, 0.86) 58%,
+        rgba(248, 245, 239, 0.42) 100%
+      ),
+      url("../img/hero.png");
+
+    background-size: cover;
+
+    background-position: 68% center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 7vw, 52px);
+
+    line-height: 1.08;
+
+    margin-bottom: 18px;
+  }
+
+  .hero-line {
+    width: 58px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+
+    max-width: 100%;
+
+    margin-bottom: 28px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 22px;
+  }
+
+  /* TRUST BAR */
+
+  .trust-bar {
+    width: 90%;
+
+    margin-top: -24px;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 24px;
+  }
+
+  .trust-item {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+
+    justify-content: flex-start;
+
+    padding: 22px 24px;
+  }
+
+  .trust-item:last-child {
+    border-bottom: none;
+  }
+
+  .trust-item p {
+    font-size: 14px;
+  }
+
+  /* PRODUCTOS */
+
+  .featured-products {
+    width: 90%;
+    margin-bottom: 75px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .product-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .product-image {
+    height: 120px;
+  }
+
+  .product-card h3 {
+    font-size: 20px;
+  }
+
+  /* RUTINAS */
+
+  .routine-preview {
+    width: 90%;
+
+    padding: 36px 24px;
+
+    border-radius: 28px;
+
+    margin-bottom: 75px;
+  }
+
+  .routine-preview h2 {
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: 50px 7% 24px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-brand img {
+    width: 130px;
+  }
+
+  .footer-column {
+    gap: 6px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 8px;
+  }
+
+  /* WHATSAPP */
+
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+
+    right: 18px;
+    bottom: 18px;
+
+    font-size: 26px;
+  }
+}
+
+/* =========================================
+   MOBILE CHICO
+========================================= */
+
+@media (max-width: 520px) {
+
+  .hero {
+    min-height: 84vh;
+
+    background-position: 72% center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .section-heading h2,
+  .routine-preview h2 {
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  .product-card,
+  .routine-preview {
+    border-radius: 24px;
   }
 }
