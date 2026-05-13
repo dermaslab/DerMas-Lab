@@ -1675,3 +1675,19 @@ html {
     border-radius: 24px;
   }
 }
+
+@media (max-width: 520px) {
+  .about-hero {
+    min-height: 82vh;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(248, 245, 239, 0.96) 0%,
+        rgba(248, 245, 239, 0.86) 62%,
+        rgba(248, 245, 239, 0.45) 100%
+      ),
+      url("../img/nosotros-hero.png") !important;
+    background-size: cover;
+    background-position: center right;
+  }
+}
