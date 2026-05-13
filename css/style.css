@@ -19,6 +19,10 @@ body {
   background-color: var(--white);
 }
 
+html {
+  touch-action: manipulation;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -1499,8 +1503,8 @@ a {
   }
 
   .menu-toggle {
-    display: flex;
-  }
+  touch-action: manipulation;
+}
 
   .nav-menu {
     position: fixed;
